@@ -91,7 +91,7 @@ for file_name in file_list_dj:
     #1 绘制匹配连线
     plt.rcParams['savefig.dpi'] = 100 #图片像素
     plt.rcParams['figure.dpi'] = 100 #分辨率
-    plt.rcParams['figure.figsize'] = (400.0, 300.0) # 设置figure_size尺寸
+    plt.rcParams['figure.figsize'] = (40.0, 30.0) # 设置figure_size尺寸
     _, ax = plt.subplots()
     plotmatch.plot_matches(
         ax,
