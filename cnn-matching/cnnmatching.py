@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import time
 from skimage import measure
 from skimage import transform
+import os
 
 #time count
 start = time.perf_counter()
@@ -17,12 +18,12 @@ _RESIDUAL_THRESHOLD = 30
 # read data
 file_path_dj = "test_data/dj"
 file_path_rs = "test_data/rs"
-file_list = os.listdir(file_path_dj) # 数据集文件列表
+file_list_dj = os.listdir(file_path_dj) # 数据集文件列表
 file_list_dj.sort() #按文件名排序
 for file_name in file_list_dj:
-    index = str(file_name[4:5])
+    index = str(file_name[3:5])
     imgfile1 = file_path_dj + "/" + file_name
-    imgfile2 = file_path_rs + "/rs_" + index
+    imgfile2 = file_path_rs + "/rs_" + index + ".png"
     start = time.perf_counter()
 
     # read left image
@@ -90,7 +91,7 @@ for file_name in file_list_dj:
     #1 绘制匹配连线
     plt.rcParams['savefig.dpi'] = 100 #图片像素
     plt.rcParams['figure.dpi'] = 100 #分辨率
-    plt.rcParams['figure.figsize'] = (4.0, 3.0) # 设置figure_size尺寸
+    plt.rcParams['figure.figsize'] = (400.0, 300.0) # 设置figure_size尺寸
     _, ax = plt.subplots()
     plotmatch.plot_matches(
         ax,
